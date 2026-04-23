@@ -1,4 +1,4 @@
-const Book = require('../models/model');
+const Book = require('../models/BookModel');
 const createBook = async (req, res) => {
     try {
         const { bookId, title, author } = req.body;
