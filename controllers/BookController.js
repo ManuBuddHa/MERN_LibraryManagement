@@ -46,4 +46,19 @@ const deleteBook = async(req,res)=>{
         res.status(500).json({ error: 'Failed to delete book' });
     };
 }
-module.exports = { createBook, viewBooks,updateBook,deleteBook };
+
+const viewBook = async(req,res)=>{
+    try{
+        const{id}=req.params;
+        const book = await Book.findById(id);
+        if(!book){
+            return res.status(404).json({ error: 'Book not found' });
+        }
+        res.status(200).json({msg:"Book details", data:book});
+
+    }catch(error){
+        res.status(500).json({ error: 'Server Error' });
+    }
+}
+
+module.exports = { createBook, viewBooks,updateBook,deleteBook, viewBook };

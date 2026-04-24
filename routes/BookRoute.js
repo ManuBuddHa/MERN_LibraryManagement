@@ -6,4 +6,5 @@ router.post('/createbook', controller.createBook);
 router.get('/viewbooks', controller.viewBooks);
 router.put('/updatebook/:id', controller.updateBook);
 router.delete('/deletebook/:id', controller.deleteBook);
+router.get('/viewbook/:id', controller.viewBook);
 module.exports = router;
