@@ -22,8 +22,8 @@ const viewBooks = async(req,res)=>{
 const updateBook = async(req,res)=>{
     try{
         const{id}=req.params;
-        const updateBook = await Book.findByIdAndUpdate(id, req.body, {new:true});
-        if(!updateBook){
+        const updatebook = await Book.findByIdAndUpdate(id, req.body, {new:true});
+        if(!updatebook){
             return res.status(404).json({ error: 'Book not found' });
         }
         res.status(200).json({msg:"Book updated successfully", data:updateBook});   
