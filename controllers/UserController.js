@@ -44,7 +44,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const del = await User.findByIdAndDelete(id);
         if (!del) {
             return res.status(400).json({ msg: "User Not Found" });
@@ -56,21 +56,21 @@ const deleteUser = async (req, res) => {
     }
 }
 
-const Login = async(req,res)=>{
-    try{
-        const {id,password} = req.body;
-        const user = await User.findOne({id});
-        if(!user){
-            return res.status(400).json({msg:"User Doesn't Exist"});
+const Login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const Finduser = await User.findOne({ email });
+        if (!Finduser) {
+            return res.status(400).json({ msg: "User Doesn't Exist" });
         }
-        const MatchPassword=await bcrypt.compare(password,user.password)
-        if(!MatchPassword){
-            return res.status(400).json({msg:"Invalid Credentials"});
+        const MatchPassword = await bcrypt.compare(password, Finduser.password)
+        if (!MatchPassword) {
+            return res.status(400).json({ msg: "Invalid Credentials" });
         }
-        res.status(200).json({msg:"Log In Successful"})
-    }catch(error){
+        res.status(200).json({ msg: "Log In Successful" })
+    } catch (error) {
         console.log(error);
-        res.status(500).json({msg:"Server Error"})
+        res.status(500).json({ msg: "Server Error" })
     }
 }
 module.exports = { createUser, viewUsers, updateUser, deleteUser, Login };
