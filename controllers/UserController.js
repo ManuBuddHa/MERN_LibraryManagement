@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/UserModel');
+const jwt = require('jsonwebtoken')
 
 const createUser = async (req, res) => {
     const { userId, name, email, password, phone } = req.body;
@@ -67,7 +68,8 @@ const Login = async (req, res) => {
         if (!MatchPassword) {
             return res.status(400).json({ msg: "Invalid Credentials" });
         }
-        res.status(200).json({ msg: "Log In Successful" })
+        const token = jwt.sign({id:Finduser._id,name:Finduser.name},process.env.SECRET_KEY,{expiresIn:'1h'})
+        res.status(200).json({ msg: "Log In Successfully",token:token })
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Server Error" })
