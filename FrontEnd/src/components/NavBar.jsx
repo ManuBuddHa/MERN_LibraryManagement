@@ -11,7 +11,7 @@ const Heading = styled.h1`
     color: #ffffff;
     font-size: 2rem;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Montserrat,Playfair Display;
 `;
 const NavLinks = styled.ul`
     list-style: none;
@@ -20,7 +20,9 @@ const NavLinks = styled.ul`
     margin: 0;
     padding: 0;
     width: 40%;
-    align-items: center;
+    
+    font-family: Montserrat;
+    font-weight: 200;
     justify-content: space-around;
     li a {
         color: #ffffff;
@@ -65,8 +67,12 @@ const NavBarComponent = () => {
         {/* View All Members */}
       </NavLinks>
       <Container>
-        <Login>Login</Login>
-        <Signup>Signup</Signup>
+        <Login onClick={()=>{
+          console.log("Login Page")
+        }}>Login</Login>
+        <Signup onClick={()=>{
+          console.log("SignUp Page")
+        }}>Signup</Signup>
       </Container>
     </NavBar>
   );
