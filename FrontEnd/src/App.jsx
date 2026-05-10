@@ -1,5 +1,9 @@
 import NavBarComponent from "./components/NavBar";
 import "./App.css"
+import Books from "./components/Books";
+import Members from "./components/Members";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 const App = () => {
   return (
     <div className="App">
@@ -14,7 +18,10 @@ const App = () => {
         </blockquote>
       
       </div>
-
+      <Books/>
+      <Members/>
+      <Signup/>
+      <Login/>
     </div>
   );
 };
