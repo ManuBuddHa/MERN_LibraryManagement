@@ -2,17 +2,23 @@ import styled from "styled-components";
 import img from '../images/login.jpg'
 
 const Container = styled.div`
+    
+    width: 80%;
+    background-image: url(${img});
+    background-position: left bottom;
+    background-size: cover;
+    margin: 2em auto;
+    box-shadow: 0 0 12px rgba(0, 0, 0,0.5);
+    
+`;
+const Opacitydiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    background-image: url(${img});
-    background-position: center;
-    background-size: cover;
-    
-    box-shadow: 0 0 12px rgba(0, 0, 0,0.5);
     margin: 2em auto;
     padding: 2em 0;
+    background-color: #0000007b;
+    height: 100%;
 `;
 const FormDiv = styled.div`
     display: flex;
@@ -22,14 +28,14 @@ const FormDiv = styled.div`
     justify-content: space-between;
     width: 100%;
     text-shadow: 2px 2px 6px black;
-    color: white;
+    color: #ffffff;
     font-weight: 500;
 `;
 function Login() {
     return (
         <div>
             <Container>
-                
+                <Opacitydiv>
                     <u style={{ color: 'red' }}><h1 className="heading">Login</h1></u>
                     <form>
                         <FormDiv>
@@ -44,7 +50,7 @@ function Login() {
                             <button type="submit" className="submitBtn">Login</button>
                         </FormDiv>
                     </form>
-            
+                </Opacitydiv>
             </Container>
         </div>
     )

@@ -11,17 +11,17 @@ const App = () => {
 
       <div className="quote">
         <p>
-        “A <span style={{}}>Library</span> is a map of human experience, drawn in ink and bound in hope.” 
+          “A <span style={{ color: 'red' }}>Library</span> is a map of human experience, drawn in ink and bound in <span style={{ color: 'red' }}>hope</span>.”
         </p>
         <blockquote>
-        — Eleanor Finch
+          — Eleanor Finch
         </blockquote>
-      
+
       </div>
-      <Books/>
-      <Members/>
-      <Signup/>
-      <Login/>
+      <Books />
+      <Members />
+      <Signup />
+      <Login />
     </div>
   );
 };
