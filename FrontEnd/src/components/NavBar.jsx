@@ -6,6 +6,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 10vh;
 `;
 const Heading = styled.h1`
     color: #ffffff;
