@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const NavBar = styled.nav`
   background-color: #333;
   padding: 1rem;
@@ -60,19 +60,15 @@ const NavBarComponent = () => {
     <NavBar>
       <Heading>Library Management System</Heading>
       <NavLinks>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Books</a></li> 
+        <Link to="/"><li>Home</li></Link>
+        <Link to="/books"><li>Books</li></Link>
         {/* View All Books */}
-        <li><a href="#">Members</a></li>
+        <Link to="/members"><li>Members</li></Link>
         {/* View All Members */}
       </NavLinks>
       <Container>
-        <Login onClick={()=>{
-          console.log("Login Page")
-        }}>Login</Login>
-        <Signup onClick={()=>{
-          console.log("SignUp Page")
-        }}>Signup</Signup>
+         <Link to="/login"> <Login >Login</Login></Link>
+        <Link to="/signup"><Signup>Signup</Signup></Link>
       </Container>
     </NavBar>
   );
