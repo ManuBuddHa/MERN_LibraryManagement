@@ -17,7 +17,7 @@ const BGimg = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    max-width: 600px; /* Instead of fixed 40%, use max-width */
+    max-width: 500px; /* Instead of fixed 40%, use max-width */
     margin: auto;
     border: 2px solid #ffffff;
     border-radius: 12px;

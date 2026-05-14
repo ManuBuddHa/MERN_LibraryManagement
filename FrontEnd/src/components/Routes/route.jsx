@@ -5,6 +5,8 @@ import Hero from "../Hero";
 import Members from "../Members";
 import Books from "../Books";
 import AdminHome from "../AdminHome";
+import AdminBooks from "../AdminBooks";
+import AdminMembers from "../AdminMembers";
 const RoutePaths = () =>{
     return(
         <>
@@ -15,6 +17,9 @@ const RoutePaths = () =>{
                 <Route path="/books" element={<Books/>}></Route>
                 <Route path="/members" element={<Members/>}></Route>
                 <Route path="/adminhome" element={<AdminHome/>}></Route>
+                <Route path="/admin/books" element={<AdminBooks/>}></Route>
+                <Route path="/admin/members" element={<AdminMembers/>}></Route>
+
             </Routes>
         </>
     )
