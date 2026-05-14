@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { books } from '../Api/api'
-
+import NavBarComponent from './NavBar'
 const Table = styled.table`
     border: 2px solid grey;
     margin: 2em auto;
@@ -20,6 +20,7 @@ const Books = () => {
     }, [])
     return (
         <div>
+            <NavBarComponent />
             <u style={{ color: 'red' }}><h1 style={{ fontFamily: 'Montserrat', fontSize: '3em', marginTop: '2em', color: 'black', marginLeft: '2em' }}>Books</h1></u>
             <Table border='2'>
                 <tr>

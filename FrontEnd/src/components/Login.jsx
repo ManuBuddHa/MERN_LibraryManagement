@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import img from '../images/SignupBG.jpg';
+import NavBarComponent from './NavBar';
 
 const BGimg = styled.div`
     background-image: url(${img});
@@ -113,6 +114,8 @@ const LoginBtn = styled.button`
 
 function Login() {
     return (
+        <>
+        <NavBarComponent />
         <BGimg>
             <Container>
                 <u style={{ color: 'red' }}>
@@ -131,6 +134,7 @@ function Login() {
                 </Form>
             </Container>
         </BGimg>
+        </>
     );
 }
 

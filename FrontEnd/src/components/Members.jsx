@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { members } from '../Api/api';
+import NavBarComponent from './NavBar';
 
 const Table = styled.table`
     border: 2px solid grey;
@@ -22,6 +23,7 @@ const Members = () => {
   }, [])
   return (
     <div>
+      <NavBarComponent />
       <u style={{ color: 'red' }}><h1 style={{ fontFamily: 'Montserrat', fontSize: '3em', marginTop: '2em', color: 'black', marginLeft: '2em' }}>Members</h1></u>
       <Table border="2">
         <tr>

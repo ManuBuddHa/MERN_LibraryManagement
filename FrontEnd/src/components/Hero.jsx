@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bgImg from '../images/homeBG.jpg';
+import NavBarComponent from './NavBar';
 const Container = styled.div`
     background-image: url(${bgImg});
     background-size: cover;
@@ -50,6 +51,8 @@ const QuoteText = styled.p`
 
 function Hero() {
     return (
+        <>
+        <NavBarComponent />
         <Container>
             <Mask>
                 <Quote>
@@ -62,6 +65,7 @@ function Hero() {
                 </Quote>
             </Mask>
         </Container>
+        </>
     )
 }
 
