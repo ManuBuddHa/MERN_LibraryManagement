@@ -27,8 +27,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2em;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px); /* Optional: adds a nice frosted glass effect */
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px); /* Optional: adds a nice frosted glass effect */
 `;
 
 const Form = styled.form`
@@ -83,6 +83,10 @@ const Input = styled.input`
         outline: none;
         border-bottom: 3px solid #0091ff;
         transition: all 0.3s ease;
+    }
+        &::placeholder {
+        color: #ffffff82;
+        font-family: 'Montserrat', sans-serif;
     }
 `;
 

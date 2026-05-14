@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
+
 const NavBar = styled.nav`
   background-color: #333;
   padding: 1rem;
@@ -81,17 +87,17 @@ const Container = styled.div`
 const NavBarComponent = () => {
   return (
     <NavBar>
-      <Heading>Library Management System</Heading>
+      <StyledLink to="/"><Heading>Library Management System</Heading></StyledLink>
       <NavLinks>
-        <Link to="/"><List>Home</List></Link>
-        <Link to="/books"><List>Books</List></Link>
+        <StyledLink to="/"><List>Home</List></StyledLink>
+        <StyledLink to="/books"><List>Books</List></StyledLink>
         {/* View All Books */}
-        <Link to="/members"><List>Members</List></Link>
+        <StyledLink to="/members"><List>Members</List></StyledLink>
         {/* View All Members */}
       </NavLinks>
       <Container>
-        <Link to="/login"> <Login >Login</Login></Link>
-        <Link to="/signup"><Signup>Signup</Signup></Link>
+        <StyledLink to="/login"> <Login >Login</Login></StyledLink>
+        <StyledLink to="/signup"><Signup>Signup</Signup></StyledLink>
       </Container>
     </NavBar>
   );

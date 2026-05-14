@@ -29,6 +29,11 @@ const Quote = styled.div`
     padding: 5px;
     display: flex;
     flex-direction: column;
+    &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        transform: scale(1.05);
+        transition: all 0.6s ease;
+    }
 `
 const BlockQuote = styled.blockquote`
     font-weight: 500;

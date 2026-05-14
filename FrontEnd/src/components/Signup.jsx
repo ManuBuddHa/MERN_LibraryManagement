@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import img from '../images/SignupBG.jpg';
 
+
 const BGimg = styled.div`
     background-image: url(${img});
     background-position: center;
@@ -16,7 +17,7 @@ const BGimg = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    max-width: 500px; /* Instead of fixed 40%, use max-width */
+    max-width: 600px; /* Instead of fixed 40%, use max-width */
     margin: auto;
     border: 2px solid #ffffff;
     border-radius: 12px;
@@ -25,8 +26,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2em;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for better readability */
-    backdrop-filter: blur(5px); /* Optional: adds a modern feel */
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px); 
 `;
 
 const Form = styled.form`
@@ -35,12 +36,13 @@ const Form = styled.form`
     gap: 1.5em;
     width: 100%; /* Take full width of Container */
     margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 `;
 
 const FormDiv = styled.div`
     display: flex;
     flex-direction: column; /* Stack vertically for better mobile scaling */
-    gap: 0.5em;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     color: #ffffff;
@@ -77,6 +79,10 @@ const Input = styled.input`
         outline: none;
         border-bottom: 3px solid #0091ff;
         transition: all 0.3s ease;
+    }
+        &::placeholder {
+        color: #ffffff3f;
+        font-family: 'Montserrat', sans-serif;
     }
 `;
 
