@@ -7,6 +7,9 @@ const AuthMiddleware = async (req, res, next) => {
         // }
         // const token = header.split(" ")[1];
         const token = req.cookies.token
+        if(!token){
+            return res.status(404).json({msg:"Token Unavailable"})
+        }
         const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
         next()
     }
