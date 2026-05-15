@@ -7,23 +7,23 @@ import { useNavigate } from "react-router-dom";
 
 const BGimg = styled.div`
     background-image: url(${img});
-    background-position: center bottom;
+    background-position: center;
     background-size: cover;
     width: 100%;
-    /* Use min-height so content isn't cut off on small screens */
     min-height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1em;
     box-sizing: border-box;
+    position: fixed;
+    z-index: -1;
 `;
 
 const Container = styled.div`
-    /* Changed from 30% to a responsive width */
     width: 100%;
-    max-width: 450px; 
-    margin: auto;
+    max-width: 400px; 
+    margin-top: 15vh;
     border: 2px solid #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
@@ -115,7 +115,7 @@ const LoginBtn = styled.button`
     }
 `;
 
-function Login() {
+const Login = () => {
    const navigate = useNavigate()
     const [form,setform] = useState({
         email:"",
@@ -131,8 +131,12 @@ function Login() {
         e.preventDefault();
         try{
             const res = await LoginUser(form);
-            console.log(form);
-            navigate('/books')
+            if(form.email == 'admin@admin.com'){
+                navigate('/adminhome')
+            }
+            else{
+                navigate('/books')
+            }
             if(res.success){
                 console.log("Login Successful");
             }
@@ -149,7 +153,7 @@ function Login() {
         <BGimg>
             <Container>
                 <u style={{ color: 'red' }}>
-                    <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700' }}>Login</h1>
+                    <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700',textShadow: '0px 0px 4px #0091ff' }}>Login</h1>
                 </u>
                 <Form action="" onSubmit={handleSubmit}>
                     <FormDiv>

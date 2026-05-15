@@ -6,6 +6,9 @@ const Container = styled.div`
     background-size: cover;
     background-position: center;
     height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
     `;
 
 const Mask = styled.div`
@@ -23,7 +26,7 @@ const Quote = styled.div`
     border: 2px solid white;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-    margin: auto;
+    margin-top: 15vh;
     height: 40vh;
     width: 90vh;
     font-family: Share Tech;
@@ -49,7 +52,7 @@ const QuoteText = styled.p`
     padding: 10vh;
 `;
 
-function Hero() {
+const Hero = () => {
     return (
         <>
         <NavBarComponent />

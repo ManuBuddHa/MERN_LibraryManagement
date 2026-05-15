@@ -4,9 +4,15 @@ import { useState, useEffect } from 'react';
 import { members } from '../Api/api';
 import NavBarComponent from './NavBar';
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+`
+
 const Table = styled.table`
     border: 2px solid grey;
-    margin: 2em auto;
+    margin: 5vh auto;
     width: 80%;
     font-family: Montserrat;
 `;
@@ -22,8 +28,10 @@ const Members = () => {
     fetchdata()
   }, [])
   return (
-    <div>
+    <>
       <NavBarComponent />
+      <Container>
+      
       <u style={{ color: 'red' }}><h1 style={{ fontFamily: 'Montserrat', fontSize: '3em', marginTop: '2em', color: 'black', marginLeft: '2em' }}>Members</h1></u>
       <Table border="2">
         <tr>
@@ -39,7 +47,8 @@ const Members = () => {
           </tr>
         ))}
       </Table>
-    </div>
+      </Container>
+    </>
   )
 }
 

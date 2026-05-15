@@ -7,12 +7,16 @@ const StyledLink = styled(Link)`
 `;
 
 const NavBar = styled.nav`
-  background-color: #333;
-  padding: 1rem;
+  background-color: #000000b5;
+  backdrop-filter: blur(16px);
+  padding: 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
+  position: fixed;
+  top:0;
+  width: 98vw;
 `;
 const Heading = styled.h1`
     color: #ffffff;

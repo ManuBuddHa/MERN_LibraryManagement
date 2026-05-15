@@ -19,7 +19,6 @@ const RoutePaths = () =>{
                 <Route path="/adminhome" element={<AdminHome/>}></Route>
                 <Route path="/admin/books" element={<AdminBooks/>}></Route>
                 <Route path="/admin/members" element={<AdminMembers/>}></Route>
-
             </Routes>
         </>
     )

@@ -56,7 +56,7 @@ const AdminNav = () => {
       <StyledLink to="/adminhome">Dashboard</StyledLink>
       <StyledLink to="/admin/books">Books</StyledLink>
       <StyledLink to="/admin/members">Members</StyledLink>
-      <LogoutButton>Logout</LogoutButton>
+      <StyledLink to="/"><LogoutButton>Logout</LogoutButton></StyledLink>
     </Container>
   );
 };

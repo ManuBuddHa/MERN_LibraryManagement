@@ -7,18 +7,20 @@ const BGimg = styled.div`
     background-position: center;
     background-size: cover;
     width: 100%;
-    min-height: 100vh; /* Changed height to min-height for content growth */
+    min-height: 100vh; 
     display: flex;
     align-items: center;
-    justify-content: center; /* Fixed typo: jusify -> justify */
-    padding: 2em 1em; /* Added responsive padding */
+    justify-content: center;
+    padding: 1em;
     box-sizing: border-box;
+    position: fixed;
+    z-index: -1;
 `;
 
 const Container = styled.div`
     width: 100%;
-    max-width: 500px; /* Instead of fixed 40%, use max-width */
-    margin: auto;
+    max-width: 500px;
+    margin-top: 15vh;
     border: 2px solid #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
@@ -46,6 +48,7 @@ const FormDiv = styled.div`
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     color: #ffffff;
+    font-size: 1.2em;
     
     @media (min-width: 600px) {
         flex-direction: row; /* Side-by-side on larger screens */
@@ -54,7 +57,6 @@ const FormDiv = styled.div`
     }
 
     & label {
-        font-size: 1rem;
         @media (min-width: 600px) {
             width: 35%;
         }
@@ -107,14 +109,14 @@ const SignupBtn = styled.button`
     }
 `;
 
-function Signup() {
+const Signup = () => {
     return (
         <>
         <NavBarComponent />
         <BGimg>
             <Container>
                 <u style={{ color: 'red' }}>
-                <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700' }}>
+                <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700',textShadow: '0px 0px 4px #0091ff' }}>
                     Signup
                 </h1>
                 </u>
