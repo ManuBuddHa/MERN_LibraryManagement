@@ -69,7 +69,13 @@ const Login = async (req, res) => {
             return res.status(400).json({ msg: "Invalid Credentials" });
         }
         const token = jwt.sign({id:Finduser._id,name:Finduser.name},process.env.SECRET_KEY,{expiresIn:'1h'})
-        res.status(200).json({ msg: "Log In Successfully",token:token })
+        res.cookie("token",token,{
+            httpOnly:true,
+            secure:true,
+            sameSite:"strict",
+            maxAge:24*60*60*1000
+        })
+        res.status(200).json({ msg: "Log In Successfully",token:token , success:true })
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Server Error" })

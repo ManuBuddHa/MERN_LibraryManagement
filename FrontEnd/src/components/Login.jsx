@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import img from '../images/SignupBG.jpg';
 import NavBarComponent from './NavBar';
+import { useState } from "react";
+import { LoginUser } from "../Api/api";
+import { useNavigate } from "react-router-dom";
 
 const BGimg = styled.div`
     background-image: url(${img});
@@ -113,6 +116,33 @@ const LoginBtn = styled.button`
 `;
 
 function Login() {
+   const navigate = useNavigate()
+    const [form,setform] = useState({
+        email:"",
+        password:""
+    });
+    const handleChange = (e) =>{
+        setform({
+            ...form,
+            [e.target.name]:e.target.value,
+        });
+    };
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        try{
+            const res = await LoginUser(form);
+            console.log(form);
+            navigate('/books')
+            if(res.success){
+                console.log("Login Successful");
+            }
+            else{
+                console.log("Login Error");
+            }
+        }catch(error){
+            console.log(error)
+        }
+    };
     return (
         <>
         <NavBarComponent />
@@ -121,14 +151,14 @@ function Login() {
                 <u style={{ color: 'red' }}>
                     <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700' }}>Login</h1>
                 </u>
-                <Form>
+                <Form action="" onSubmit={handleSubmit}>
                     <FormDiv>
-                        <label htmlFor="username">Username:</label>
-                        <Input type="text" id="username" placeholder="Username" />
+                        <label htmlFor="Email">Email:</label>
+                        <Input type="email" name="email" value={form.email} onChange={handleChange} id="Email" placeholder="Email" />
                     </FormDiv>
                     <FormDiv>
                         <label htmlFor="password">Password:</label>
-                        <Input type="password" id="password" placeholder="Password" />
+                        <Input type="password" name="password" value={form.password} onChange={handleChange} id="password" placeholder="Password" />
                     </FormDiv>
                     <LoginBtn type="submit">Login</LoginBtn>
                 </Form>
