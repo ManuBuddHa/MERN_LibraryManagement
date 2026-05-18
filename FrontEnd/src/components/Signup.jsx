@@ -9,10 +9,10 @@ const BGimg = styled.div`
     width: 100%;
     min-height: 100vh; 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1em;
-    box-sizing: border-box;
+    padding: 1vh;
     position: fixed;
     z-index: -1;
 `;
@@ -20,7 +20,7 @@ const BGimg = styled.div`
 const Container = styled.div`
     width: 100%;
     max-width: 500px;
-    margin-top: 15vh;
+    margin: 15vh auto;
     border: 2px solid #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
@@ -101,7 +101,6 @@ const SignupBtn = styled.button`
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease;
-
     &:hover {
         transform: scale(1.05);
         background-color: #0091ff;
@@ -112,43 +111,43 @@ const SignupBtn = styled.button`
 const Signup = () => {
     return (
         <>
-        <NavBarComponent />
-        <BGimg>
-            <Container>
-                <u style={{ color: 'red' }}>
-                <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700',textShadow: '0px 0px 4px #0091ff' }}>
-                    Signup
-                </h1>
-                </u>
-                <Form>
-                    <FormDiv>
-                        <label htmlFor="name">Name : </label>
-                        <Input type="text" id="name" placeholder="Name" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="username">Username : </label>
-                        <Input type="text" id="username" placeholder="Username" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="email">Email :  </label>
-                        <Input type="email" id="email" placeholder="Email" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="phone">Phone : </label>
-                        <Input type="tel" id="phone" placeholder="Phone" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="password">Password : </label>
-                        <Input type="password" id="password" placeholder="Password" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="confirmPassword">Confirm Password :</label>
-                        <Input type="password" id="confirmPassword" placeholder="Confirm Password" />
-                    </FormDiv>
-                    <SignupBtn type="submit">Sign Up</SignupBtn>
-                </Form>
-            </Container>
-        </BGimg>
+            <NavBarComponent />
+            <BGimg>
+                <Container>
+                    <u style={{ color: 'red' }}>
+                        <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px', fontFamily: 'Montserrat', fontWeight: '700' }}>
+                            Signup
+                        </h1>
+                    </u>
+                    <Form>
+                        <FormDiv>
+                            <label htmlFor="name">Name : </label>
+                            <Input type="text" id="name" placeholder="Name" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="username">Username : </label>
+                            <Input type="text" id="username" placeholder="Username" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="email">Email :  </label>
+                            <Input type="email" id="email" placeholder="Email" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="phone">Phone : </label>
+                            <Input type="tel" id="phone" placeholder="Phone" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="password">Password : </label>
+                            <Input type="password" id="password" placeholder="Password" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="confirmPassword">Confirm Password :</label>
+                            <Input type="password" id="confirmPassword" placeholder="Confirm Password" />
+                        </FormDiv>
+                        <SignupBtn type="submit">Sign Up</SignupBtn>
+                    </Form>
+                </Container>
+            </BGimg>
         </>
     );
 }

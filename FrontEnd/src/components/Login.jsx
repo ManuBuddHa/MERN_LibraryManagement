@@ -116,58 +116,58 @@ const LoginBtn = styled.button`
 `;
 
 const Login = () => {
-   const navigate = useNavigate()
-    const [form,setform] = useState({
-        email:"",
-        password:""
+    const navigate = useNavigate()
+    const [form, setform] = useState({
+        email: "",
+        password: ""
     });
-    const handleChange = (e) =>{
+    const handleChange = (e) => {
         setform({
             ...form,
-            [e.target.name]:e.target.value,
+            [e.target.name]: e.target.value,
         });
     };
-    const handleSubmit = async(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             const res = await LoginUser(form);
-            if(form.email == 'admin@admin.com'){
-                navigate('/adminhome')
-            }
-            else{
-                navigate('/books')
-            }
-            if(res.success){
+            if (res.success) {
                 console.log("Login Successful");
+                if (form.email == 'admin@admin.com') {
+                    navigate('/adminhome')
+                }
+                else {
+                    navigate('/books')
+                }
             }
-            else{
-                console.log("Login Error");
+            else {
+                window.alert("Incorrect email or password. Please try again.");
             }
-        }catch(error){
+        } catch (error) {
             console.log(error)
         }
     };
     return (
         <>
-        <NavBarComponent />
-        <BGimg>
-            <Container>
-                <u style={{ color: 'red' }}>
-                    <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px',fontFamily: 'Montserrat', fontWeight: '700',textShadow: '0px 0px 4px #0091ff' }}>Login</h1>
-                </u>
-                <Form action="" onSubmit={handleSubmit}>
-                    <FormDiv>
-                        <label htmlFor="Email">Email:</label>
-                        <Input type="email" name="email" value={form.email} onChange={handleChange} id="Email" placeholder="Email" />
-                    </FormDiv>
-                    <FormDiv>
-                        <label htmlFor="password">Password:</label>
-                        <Input type="password" name="password" value={form.password} onChange={handleChange} id="password" placeholder="Password" />
-                    </FormDiv>
-                    <LoginBtn type="submit">Login</LoginBtn>
-                </Form>
-            </Container>
-        </BGimg>
+            <NavBarComponent />
+            <BGimg>
+                <Container>
+                    <u style={{ color: 'red' }}>
+                        <h1 style={{ color: 'white', fontSize: '3em', paddingBottom: '5px', fontFamily: 'Montserrat', fontWeight: '700' }}>Login</h1>
+                    </u>
+                    <Form action="" onSubmit={handleSubmit}>
+                        <FormDiv>
+                            <label htmlFor="Email">Email:</label>
+                            <Input type="email" name="email" value={form.email} onChange={handleChange} id="Email" placeholder="Email" />
+                        </FormDiv>
+                        <FormDiv>
+                            <label htmlFor="password">Password:</label>
+                            <Input type="password" name="password" value={form.password} onChange={handleChange} id="password" placeholder="Password" />
+                        </FormDiv>
+                        <LoginBtn type="submit">Login</LoginBtn>
+                    </Form>
+                </Container>
+            </BGimg>
         </>
     );
 }
