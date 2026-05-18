@@ -2,6 +2,7 @@ import styled from "styled-components";
 import img from '../images/SignupBG.jpg';
 import NavBarComponent from './NavBar';
 
+
 const BGimg = styled.div`
     background-image: url(${img});
     background-position: center;

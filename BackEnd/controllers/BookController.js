@@ -4,7 +4,7 @@ const createBook = async (req, res) => {
         const { bookId, title, author } = req.body;
         const newBook = new Book({ bookId, title, author });
         await newBook.save();
-        res.status(201).json({ msg: "Book created successfully", book: newBook });
+        res.status(201).json({  success: true, msg: "Book created successfully", book: newBook });
     } catch (error) {
         res.status(500).json({ error: 'Failed to create book' });
     }
@@ -26,7 +26,7 @@ const updateBook = async (req, res) => {
         if (!updatebook) {
             return res.status(404).json({ error: 'Book not found' });
         }
-        res.status(200).json({ msg: "Book updated successfully", data: updateBook });
+        res.status(200).json({ success: true, msg: "Book updated successfully", data: updatebook });
     }
     catch (error) {
         res.status(500).json({ error: 'Failed to update book' });
@@ -40,7 +40,7 @@ const deleteBook = async (req, res) => {
         if (!deleteBook) {
             return res.status(404).json({ error: 'Book not found' });
         }
-        res.status(200).json({ msg: "Book deleted successfully", data: deleteBook });
+        res.status(200).json({ success: true, msg: "Book deleted successfully", data: deleteBook });
     }
     catch (error) {
         res.status(500).json({ error: 'Failed to delete book' });

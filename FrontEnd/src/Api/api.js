@@ -20,3 +20,39 @@ export const LoginUser = async(postdata)=>{
     })
     return res.json()
 }
+
+export const ViewBook = async(id)=>{
+    const res = await fetch(`${baseurl}/books/viewbook/${id}`);
+    return res.json();
+}
+
+export const EditBook = async(id,postdata)=>{
+    const res = await fetch(`${baseurl}/books/editbook/${id}`,{
+        method:"PUT",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        credentials:"include",
+        body:JSON.stringify(postdata)
+    })
+    return res.json()
+}
+
+export const DeleteBook = async(id)=>{
+    const res = await fetch(`${baseurl}/books/deletebook/${id}`,{
+        method:"DELETE",
+        credentials:"include"
+    })
+    return res.json()
+}
+
+export const CreateBook = async(postdata)=>{
+    const res = await fetch(`${baseurl}/books/createbook`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(postdata)
+    })
+    return res.json()
+}
